@@ -14,3 +14,8 @@ ALTER SCHEMA IF EXISTS demo_test RENAME TO demo_test_schema_v1;  -- Renaming the
 SHOW SCHEMAS like '%demo_test_schema_v1%'; -- Viewing the metadata details of the schema.
 
 
+USE SCHEMA demo_test_schema_v1;   ---> Setting the context
+CREATE TABLE demo_test_table1 (empname VARCHAR, empid NUMBER); --> Creating the table
+INSERT INTO demo_test_table1 VALUES ('Stewart Nailes', 20012);  --> Insert the records.
+INSERT INTO demo_test_table1 VALUES ('Nathaline Manki', 20013); --> Insert the records.
+
