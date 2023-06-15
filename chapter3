@@ -19,3 +19,19 @@ CREATE TABLE demo_test_table1 (empname VARCHAR, empid NUMBER); --> Creating the 
 INSERT INTO demo_test_table1 VALUES ('Stewart Nailes', 20012);  --> Insert the records.
 INSERT INTO demo_test_table1 VALUES ('Nathaline Manki', 20013); --> Insert the records.
 
+
+
+COPY INTO "DEMO_DB_NEW"."DEMO_TEST_SCHEMA_V1"."DEMO_TEST_TABLE1"
+FROM '@"DEMO_DB_NEW"."DEMO_TEST_SCHEMA_V1"."DEMO_STAGE"/sample_file_sf_v1.csv'
+FILE_FORMAT = (
+    TYPE=CSV,
+    SKIP_HEADER=1,
+    FIELD_DELIMITER=',',
+    TRIM_SPACE=FALSE,
+    FIELD_OPTIONALLY_ENCLOSED_BY=NONE,
+    DATE_FORMAT=AUTO,
+    TIME_FORMAT=AUTO,
+    TIMESTAMP_FORMAT=AUTO
+)
+ON_ERROR=ABORT_STATEMENT
+
