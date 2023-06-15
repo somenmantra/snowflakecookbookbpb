@@ -1,1 +1,16 @@
+CREATE DATABASE demo_db;    -- This is how a database is created.
+SHOW DATABASES like '%demo%db%'; -- This is to view the propert of the database.
+DESCRIBE DATABASE demo_db; -- This is view what is there inside the database.
+
+ALTER DATABASE IF EXISTS demo_db RENAME TO demo_db_new; -- This is for renaming or altering the database.
+
+USE DATABASE demo_db_new; -- This is for changing the context from one DB to another.
+USE DATABASE SNOWFLAKE; -- This is also same as above.
+
+
+USE DATABASE demod_db_new; -- Using the database where a schema needs to be constructed.
+CREATE SCHEMA demo_test; -- Creating the schema.
+ALTER SCHEMA IF EXISTS demo_test RENAME TO demo_test_schema_v1;  -- Renaming the schema.
+SHOW SCHEMAS like '%demo_test_schema_v1%'; -- Viewing the metadata details of the schema.
+
 
